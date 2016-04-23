@@ -8,6 +8,9 @@ public class Main{
 
 		frame.setVisible(true);
 
+		JPanel panel = new JPanel();
+		panel.setBackground(Color.BLACK);
+		frame.add(panel);
 
 }
 }
