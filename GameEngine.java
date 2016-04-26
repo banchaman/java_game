@@ -2,8 +2,8 @@
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-//import java.awt.event.KeyEvent;
-//import java.awt.event.KeyListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.awt.geom.Rectangle2D;
 //import java.util.ArrayList;
 //import java.util.Iterator;
@@ -11,7 +11,7 @@ import java.awt.geom.Rectangle2D;
 import javax.swing.Timer;
 
 
-public class GameEngine /*implements KeyListener, GameReporter*/{
+public class GameEngine implements KeyListener/*, GameReporter*/{
 	GamePanel gp;
 		
 	//private ArrayList<Enemy> enemies = new ArrayList<Enemy>();	
@@ -20,7 +20,7 @@ public class GameEngine /*implements KeyListener, GameReporter*/{
 	private Timer timer;
 	
 	//private long score = 0;
-	//private double difficulty = 0.1;
+	private double difficulty = 0.1;
 	
 	public GameEngine(GamePanel gp, SpaceShip v) {
 		this.gp = gp;
@@ -82,7 +82,7 @@ public class GameEngine /*implements KeyListener, GameReporter*/{
 	
 	public void die(){
 		timer.stop();
-	}
+	}*/
 	
 	void controlVehicle(KeyEvent e) {
 		switch (e.getKeyCode()) {
@@ -93,14 +93,14 @@ public class GameEngine /*implements KeyListener, GameReporter*/{
 			v.move(1);
 			break;
 		case KeyEvent.VK_D:
-			difficulty += 10;
+			difficulty += 0.1;
 			break;
 		}
 	}
 
-	public long getScore(){
+	/*public long getScore(){
 		return score;
-	}
+	}*/
 	
 	@Override
 	public void keyPressed(KeyEvent e) {
@@ -116,5 +116,5 @@ public class GameEngine /*implements KeyListener, GameReporter*/{
 	@Override
 	public void keyTyped(KeyEvent e) {
 		//do nothing		
-	}*/
+	}
 } 
